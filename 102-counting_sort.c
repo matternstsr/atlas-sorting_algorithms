@@ -19,8 +19,8 @@ void counting_sort(int *array, size_t size)
     max_value = (size_t)array[0]; // Cast to size_t
     for (i = 1; i < size; i++)
     {
-        if ((size_t)array[i] > max_value) // Cast to size_t
-            max_value = (size_t)array[i]; // Cast to size_t
+        if ((size_t)array[i] > max_value)
+            max_value = (size_t)array[i];
     }
 
     /* Make the array for counting */
