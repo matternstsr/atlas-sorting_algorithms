@@ -14,8 +14,7 @@ void merge(int *array, int left, int middle, int right)
     int left_index, right_index, start;
     int size_left = middle - left + 1;
     int size_right = right - middle;
-    int *left_array = malloc(size_left * sizeof(int));
-    int *right_array = malloc(size_right * sizeof(int));
+    int left_array[1024], right_array[1024];
 
     if (!left_array || !right_array)
         return;
