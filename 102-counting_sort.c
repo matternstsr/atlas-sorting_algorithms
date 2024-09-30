@@ -46,7 +46,7 @@ void counting_sort(int *array, size_t size)
 	index = 0;
 
 	end_array = malloc((max_value + 1) * sizeof(int));
-	if (!counting_array)
+	if (!end_array)
 		return;
 
 	for (i = 0; i <= (size_t)max_value; i++)
