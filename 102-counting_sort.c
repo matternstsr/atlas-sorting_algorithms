@@ -10,15 +10,15 @@
 */
 void counting_sort(int *array, size_t size)
 {
-	int max_value, *counting_array, i;
-
+	int max_value, *counting_array;
+	size_t i, index;
 	
 	if (size <= 1)
 		return;
 
 	/* Find the maximum value in the array */
 	max_value = array[0];
-	for (size_t i = 1; i < size; i++)
+	for (i = 1; i < size; i++)
 	{
 		if (array[i] > max_value)
 			max_value = array[i];
@@ -34,14 +34,14 @@ void counting_sort(int *array, size_t size)
 		counting_array[i] = 0;
 
 	/* Count each element in the array */
-	for (size_t i = 0; i < size; i++)
+	for (i = 0; i < size; i++)
 		counting_array[array[i]]++;
 
 	/* Print the counting array */
 	print_array(counting_array, max_value + 1);
 
 	/* Reconstruct the original array */
-	size_t index = 0;
+	index = 0;
 	for (i = 0; i <= max_value; i++)
 	{
 		while (counting_array[i] > 0)
