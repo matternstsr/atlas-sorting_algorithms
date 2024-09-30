@@ -2,52 +2,54 @@
 #include <stdlib.h>
 #include "sort.h"
 
-
 /* 
-* counting_sort - Sorts an array of integers using the Counting sort algorithm.
-* @array: The array to sort.
-* @size: The size of the array.
-*/
+ * counting_sort - Sorts an array of integers using the Counting sort algorithm.
+ * @array: The array to sort.
+ * @size: The size of the array.
+ */
 void counting_sort(int *array, size_t size)
 {
-	int max_value, *counting_array;
-	size_t i, index;
-	
-	if (size <= 1)
-		return;
+    int max_value, *counting_array;
+    size_t i, index;
 
-	/* Find the maximum value in the array */
-	max_value = array[0];
-	for (i = 1; i < size; i++)
-	{
-		if (array[i] > max_value)
-			max_value = array[i];
-	}
+    if (size <= 1)
+        return;
 
-	/* make the array for counting */
-	counting_array = malloc((max_value + 1) * sizeof(int));
-	if (!counting_array)
-		return;
+    /* Find the maximum value in the array */
+    max_value = array[0];
+    for (i = 1; i < size; i++)
+    {
+        if (array[i] > max_value)
+            max_value = array[i];
+    }
 
-	/* Fill array with zeros could have used calloc */
-	for (i = 0; i <= max_value; i++)
-		counting_array[i] = 0;
+    /* Make the array for counting */
+    counting_array = malloc((max_value + 1) * sizeof(int));
+    if (!counting_array)
+        return;
 
-	/* Count each element in the array */
-	for (i = 0; i < size; i++)
-		counting_array[array[i]]++;
+    /* Fill array with zeros could have used calloc */
+    for (i = 0; i <= max_value; i++)
+        counting_array[i] = 0;
 
-	/* Print the counting array */
-	print_array(counting_array, max_value + 1);
+    /* Count each element in the array */
+    for (i = 0; i < size; i++)
+        counting_array[array[i]]++;
 
-	/* Reconstruct the original array */
-	index = 0;
-	for (i = 0; i <= max_value; i++)
-	{
-		while (counting_array[i] > 0)
-			array[index++] = i;
-	}
+    /* Print the counting array */
+    print_array(counting_array, max_value + 1);
 
-	/* Free counting array */
-	free(counting_array);
+    /* Reconstruct the original array */
+    index = 0;
+    for (i = 0; i <= max_value; i++)
+    {
+        while (counting_array[i] > 0)
+        {
+            array[index++] = i;
+            counting_array[i]--;
+        }
+    }
+
+    /* Free counting array */
+    free(counting_array);
 }
