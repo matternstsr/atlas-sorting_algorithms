@@ -29,7 +29,7 @@ void counting_sort(int *array, size_t size)
         return;
 
     /* Fill array with zeros */
-    for (i = 0; i <= max_value; i++)
+    for (i = 0; i <= (size_t)max_value; i++)
         counting_array[i] = 0;
 
     /* Count each element in the array */
