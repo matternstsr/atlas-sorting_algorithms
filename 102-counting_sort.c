@@ -9,18 +9,18 @@
  */
 void counting_sort(int *array, size_t size)
 {
-    size_t max_value, *counting_array;
+    int max_value, *counting_array;
     size_t i, index;
 
     if (size <= 1)
         return;
 
     /* Find the maximum value in the array */
-    max_value = (size_t)array[0];
+    max_value = array[0];
     for (i = 1; i < size; i++)
     {
-        if ((size_t)array[i] > max_value)
-            max_value = (size_t)array[i];
+        if (array[i] > max_value)
+            max_value = array[i];
     }
 
     /* Make the array for counting */
