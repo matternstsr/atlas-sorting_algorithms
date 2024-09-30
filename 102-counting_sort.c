@@ -45,7 +45,7 @@ void counting_sort(int *array, size_t size)
 	/* Reconstruct the original array */
 	index = 0;
 
-	end_array = calloc((size + 1) * sizeof(int));
+	end_array = calloc(size, sizeof(int));
 	if (!end_array)
 		return;
 
