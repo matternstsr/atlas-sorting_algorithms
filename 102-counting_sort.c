@@ -9,26 +9,26 @@
  */
 void counting_sort(int *array, size_t size)
 {
-    int max_value, *counting_array;
+    size_t max_value, *counting_array;
     size_t i, index;
 
     if (size <= 1)
         return;
 
     /* Find the maximum value in the array */
-    max_value = array[0];
+    max_value = (size_t)array[0]; // Cast to size_t
     for (i = 1; i < size; i++)
     {
-        if (array[i] > max_value)
-            max_value = array[i];
+        if ((size_t)array[i] > max_value) // Cast to size_t
+            max_value = (size_t)array[i]; // Cast to size_t
     }
 
     /* Make the array for counting */
-    counting_array = malloc((max_value + 1) * sizeof(int));
+    counting_array = malloc((max_value + 1) * sizeof(size_t)); // Use size_t for counting
     if (!counting_array)
         return;
 
-    /* Fill array with zeros could have used calloc */
+    /* Fill array with zeros */
     for (i = 0; i <= max_value; i++)
         counting_array[i] = 0;
 
