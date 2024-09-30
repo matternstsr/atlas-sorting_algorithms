@@ -49,7 +49,7 @@ void counting_sort(int *array, size_t size)
 	if (!end_array)
 		return;
 
-	for (i = 0; i <= (size_t)max_value; i++)
+	for (i = 0; i < size; i++)
 	{
 		while (counting_array[i] > 0)
 		{
