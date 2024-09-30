@@ -9,7 +9,7 @@
 */
 void counting_sort(int *array, size_t size)
 {
-	int max_value, *counting_array;
+	int max_value, *counting_array, end_array;
 	size_t i, index;
 
 	if (size <= 1)
@@ -44,6 +44,11 @@ void counting_sort(int *array, size_t size)
 
 	/* Reconstruct the original array */
 	index = 0;
+
+	end_array = malloc((max_value + 1) * sizeof(int));
+	if (!counting_array)
+		return;
+
 	for (i = 0; i <= (size_t)max_value; i++)
 	{
 		while (counting_array[i] > 0)
