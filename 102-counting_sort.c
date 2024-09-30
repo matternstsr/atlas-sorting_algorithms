@@ -10,7 +10,7 @@
 void counting_sort(int *array, size_t size)
 {
 	int max_value, *counting_array, *end_array;
-	size_t i, index;
+	size_t i;
 
 	if (size <= 1)
 		return;
@@ -41,9 +41,6 @@ void counting_sort(int *array, size_t size)
 
 	/* Print the counting array */
 	print_array(counting_array, (size_t)max_value + 1);
-
-	/* Reconstruct the original array */
-	index = 0;
 
 	end_array = calloc(size, sizeof(int));
 	if (!end_array)
