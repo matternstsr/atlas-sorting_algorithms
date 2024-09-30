@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "sort.h"
 
-/* 
+/*
 * counting_sort - Sorts an array of integers using the Counting sort algorithm.
 * @array: The array to sort.
 * @size: The size of the array.
@@ -45,7 +45,6 @@ void counting_sort(int *array, size_t size)
 	}
 	for (i = 0; i < size; i++)
 		array[i] = end_array[i];
-
 	/* Free counting array */
 	free(counting_array);
 	free(end_array);
