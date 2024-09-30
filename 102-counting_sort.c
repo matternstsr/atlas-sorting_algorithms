@@ -45,18 +45,17 @@ void counting_sort(int *array, size_t size)
 	/* Reconstruct the original array */
 	index = 0;
 
-	end_array = malloc((max_value + 1) * sizeof(int));
+	end_array = calloc((size + 1) * sizeof(int));
 	if (!end_array)
 		return;
 
 	for (i = 0; i < size; i++)
 	{
-		while (counting_array[i] > 0)
-		{
-			array[index++] = i;
-			counting_array[i]--;
-		}
+		end_array[counting_array[array[i]] - 1] = array[i];
+		counting_array[array[i]]--;
 	}
+	for (i = 0; i < size; i++)
+		array[i] = end_array[i];
 
 	/* Free counting array */
 	free(counting_array);
