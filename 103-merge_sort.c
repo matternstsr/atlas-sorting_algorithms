@@ -16,9 +16,6 @@ void merge(int *array, int left, int middle, int right)
     int size_right = right - middle;
     int left_array[1024], right_array[1024];
 
-    if (!left_array || !right_array)
-        return;
-
     for (left_index = 0; left_index < size_left; left_index++)
         left_array[left_index] = array[left + left_index];
     for (right_index = 0; right_index < size_right; right_index++)
