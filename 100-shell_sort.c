@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "sort.h"
 
 /* 
 * shell_sort - Sorts an array of integers using the Shell sort algorithm
