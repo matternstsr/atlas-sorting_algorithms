@@ -14,7 +14,6 @@ void counting_sort(int *array, size_t size)
 
 	if (size <= 1)
 		return;
-
 	/* Find the maximum value in the array */
 	max_value = array[0];
 	for (i = 1; i < size; i++)
@@ -22,30 +21,23 @@ void counting_sort(int *array, size_t size)
 		if (array[i] > max_value)
 			max_value = array[i];
 	}
-
 	/* Make the array for counting */
 	counting_array = malloc((max_value + 1) * sizeof(int));
 	if (!counting_array)
 		return;
-
 	/* Fill array with zeros */
 	for (i = 0; i <= (size_t)max_value; i++)
 		counting_array[i] = 0;
-
 	/* Count each element in the array */
 	for (i = 0; i < size; i++)
 		counting_array[array[i]]++;
-
 	for (i = 1; i < (size_t)max_value + 1; i++)
 		counting_array[i] += counting_array[i - 1];
-
 	/* Print the counting array */
 	print_array(counting_array, (size_t)max_value + 1);
-
 	end_array = calloc(size, sizeof(int));
 	if (!end_array)
 		return;
-
 	for (i = 0; i < size; i++)
 	{
 		end_array[counting_array[array[i]] - 1] = array[i];
