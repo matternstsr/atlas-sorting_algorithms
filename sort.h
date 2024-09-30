@@ -38,5 +38,9 @@ int lomuto_partition(int *arr, int lo, int hi, size_t size);
 /* Atlas_sorting_arrays */
 void shell_sort(int *array, size_t size);
 void counting_sort(int *array, size_t size);
+void merge_sort(int *array, size_t size);
+void merge_sort_recursive(int *array, int left, int right);
+void merge(int *array, int left, int middle, int right);
+
 
 #endif /* SORT_H */
