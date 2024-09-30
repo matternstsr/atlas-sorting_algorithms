@@ -16,7 +16,7 @@ void counting_sort(int *array, size_t size)
         return;
 
     /* Find the maximum value in the array */
-    max_value = (size_t)array[0]; // Cast to size_t
+    max_value = (size_t)array[0];
     for (i = 1; i < size; i++)
     {
         if ((size_t)array[i] > max_value)
