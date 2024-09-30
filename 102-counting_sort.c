@@ -41,7 +41,7 @@ void counting_sort(int *array, size_t size)
 
     /* Reconstruct the original array */
     index = 0;
-    for (i = 0; i <= max_value; i++)
+    for (i = 0; i <= (size_t)max_value; i++)
     {
         while (counting_array[i] > 0)
         {
