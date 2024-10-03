@@ -3,7 +3,7 @@
 #include "sort.h"
 
 /*
-* shell_sort - Sorts array integers using Shell sort algorithm - Knuth sequence.
+* shell_sort - Sort array ints using Shell sort algorithm - Knuth sequence.
 * @array: The array to sort.
 * @size: The size of the array.
 */
@@ -13,7 +13,7 @@ void shell_sort(int *array, size_t size)
 	size_t gap = 1;
 	size_t i, j;
 	int temp;
-	
+
 	/* Figure out ate initial gap */
 	while (gap < size)
 		gap = gap * 3 + 1;
@@ -39,7 +39,6 @@ void shell_sort(int *array, size_t size)
 
 		/* Print the array after each itteration */
 		print_array(array, size);
-		
 		/* Figue out the next gap */
 		gap = (gap - 1) / 3;
 	}
