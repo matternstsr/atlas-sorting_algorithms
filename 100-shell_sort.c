@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "sort.h"
 
-/*
+/**
 * shell_sort - Sort array ints using Shell sort algorithm - Knuth sequence.
 * @array: The array to sort.
 * @size: The size of the array.
