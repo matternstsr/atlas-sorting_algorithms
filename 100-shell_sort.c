@@ -3,8 +3,7 @@
 #include "sort.h"
 
 /*
-* shell_sort - Sorts an array of integers using the Shell sort algorithm
-*               with the Knuth sequence.
+* shell_sort - Sorts array integers using Shell sort algorithm - Knuth sequence.
 * @array: The array to sort.
 * @size: The size of the array.
 */
