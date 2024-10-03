@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "sort.h"
 
-/* 
+/*
 * shell_sort - Sorts an array of integers using the Shell sort algorithm
 *               with the Knuth sequence.
 * @array: The array to sort.
@@ -13,6 +13,7 @@ void shell_sort(int *array, size_t size)
 	/* Sequence gaps */
 	size_t gap = 1;
 	size_t i;
+	int temp;
 	
 	/* Figure out ate initial gap */
 	while (gap < size)
@@ -25,7 +26,7 @@ void shell_sort(int *array, size_t size)
 	{
 		for (i = gap; i < size; i++)
 		{
-			int temp = array[i];
+			temp = array[i];
 			size_t j = i;
 
 			/* Sort with insertion using current gap */
