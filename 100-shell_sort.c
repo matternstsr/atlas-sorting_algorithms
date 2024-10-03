@@ -12,7 +12,7 @@ void shell_sort(int *array, size_t size)
 {
 	/* Sequence gaps */
 	size_t gap = 1;
-	size_t i;
+	size_t i, j;
 	int temp;
 	
 	/* Figure out ate initial gap */
@@ -27,7 +27,7 @@ void shell_sort(int *array, size_t size)
 		for (i = gap; i < size; i++)
 		{
 			temp = array[i];
-			size_t j = i;
+			j = i;
 
 			/* Sort with insertion using current gap */
 			while (j >= gap && array[j - gap] > temp)
